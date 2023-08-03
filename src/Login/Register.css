@@ -1,0 +1,27 @@
+.register-form{
+     width:40%;
+     margin: 0 auto;
+  
+}
+.register-page{
+    background-color: var(--color-f5f5f7);
+}
+.register-form-content{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    align-items: center;
+    gap:20px;
+    background-color: white;
+}
+
+.register-form-content input{
+    padding: 10px 40px;
+    width: 100%;
+}
+
+.redirect-login{
+    background-color: var(--color-f5f5f7);
+    padding: 10px 30px;
+    color: black;
+}
