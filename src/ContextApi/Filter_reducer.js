@@ -64,8 +64,6 @@ const Filter_reducer = (state, action) => {
             
         case 'RETURN_FILTER_VALUE' :
             const {name,value}=action.payload
-            //  console.log(value)
-            //  console.log(name)
             return {
                  
                ...state,

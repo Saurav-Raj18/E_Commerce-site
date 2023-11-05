@@ -6,7 +6,7 @@ import { AppContext } from "../ContextApi/ContextApi.js";
 
 const Home = () => {
   const apiData = useContext(AppContext);
-  //  console.log(apiData);
+    console.log(apiData);
   return (
     <>
       <section className="home-wrapper-1 py-5">
@@ -215,44 +215,44 @@ const Home = () => {
       </section> */}
       <section className="home-wrapeer-3 py-3">
         <h1 className="text-center mt-2 mb-3">Our Products</h1>
-      <div className="container">
-       <div className="row">
-      {apiData.product.length > 0 ? (
-      apiData.product.map((i, index) => {
-        return (
-          <div key={i.id} className="col-md-4 ml-1 mt-3 position-relative">
-            <div className="d-flex flex-column align-items-center justify-content-between">
-              <h5>{i.category}</h5>
-              <img className="img-fluid product" src={i.image} alt={i.category} />
-              <div className="position-absolute product-details">
-                
-               <p>₹{i.price}</p>
-               <p>{i.company}</p>
-               <p>{i.name}</p>
-               
-               <Link to={`/singleproduct/${i.id}`} className="btn btn-primary">Buy Now</Link>
-              
-              </div>
-            </div>
+        <div className="container">
+          <div className="row">
+            {apiData.product.length > 0 ? (
+              apiData.product.map((i, index) => {
+                return (
+                  <div key={i.id} className="col-md-4 ml-1 mt-3 position-relative">
+                    <div className="d-flex flex-column align-items-center justify-content-between">
+                      <h5>{i.category}</h5>
+                      <img className="img-fluid product" src={i.image} alt={i.category} />
+                      <div className="position-absolute product-details">
+
+                        <p>₹{i.price}</p>
+                        <p>{i.company}</p>
+                        <p>{i.name}</p>
+
+                        <Link to={`/singleproduct/${i.id}`} className="btn btn-primary">Buy Now</Link>
+
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+            ) : (
+              <h1>...Loading</h1>
+            )}
           </div>
-        );
-      })
-    ) : (
-      <h1>...Loading</h1>
-    )}
-  </div>
-  </div>
+        </div>
       </section>
 
       <section className="filter-product py-5">
-          <h2 className="text-center">Our Featured Product</h2>
-          <div className="feature-product d-flex gap-2 ">
-            { apiData.featureProduct.map((i,key)=>{
-               return(
-                  <div className="p-2"><img src={i.image} className="img-fluid"/></div>
-               )
-            })}
-          </div>
+        <h2 className="text-center">Our Featured Product</h2>
+        <div className="feature-product d-flex gap-2 ">
+          {apiData.featureProduct.map((i, key) => {
+            return (
+              <div className="p-2"><img src={i.image} className="img-fluid" /></div>
+            )
+          })}
+        </div>
       </section>
     </>
   );
